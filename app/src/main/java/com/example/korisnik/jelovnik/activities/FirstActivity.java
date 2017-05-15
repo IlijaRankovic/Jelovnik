@@ -4,9 +4,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.korisnik.jelovnik.R;
+import com.example.korisnik.jelovnik.provider.KategorijaProvider;
+
+import java.util.List;
 
 /**
  * Created by Korisnik on 15.5.2017..
@@ -23,6 +29,21 @@ public class FirstActivity extends Activity {
 
         Toast toast = Toast.makeText(getBaseContext(), "FirstActivity.onCreate", Toast.LENGTH_SHORT);
         toast.show();
+
+        final List<String> kategorijaNaziv = KategorijaProvider.getKategorijaNaziv();
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.list_item, kategorijaNaziv);
+        ListView listView = (ListView) findViewById(R.id.listofKategorija);
+
+        listView.setAdapter(dataAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+                intent.putExtra("position", position);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

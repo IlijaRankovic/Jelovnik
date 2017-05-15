@@ -24,6 +24,11 @@
             android:label="@string/activity_second">
         </activity>
 
+        <activity
+            android:name=".activities.ThirdActivity"
+            android:label="@string/activity_third">
+        </activity>
+
     </application>
 
 </manifest>

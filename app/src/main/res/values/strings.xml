@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Jelovnik</string>
     <string name="activity_second">Second Activity</string>
+    <string name="activity_third">Third Activity</string>
 </resources>
