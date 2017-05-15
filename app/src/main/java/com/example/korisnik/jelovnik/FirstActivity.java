@@ -1,7 +1,9 @@
 package com.example.korisnik.jelovnik;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 /**
@@ -73,5 +75,11 @@ public class FirstActivity extends Activity {
 
         Toast toast = Toast.makeText(getBaseContext(), "FirstActivity.onDestroy", Toast.LENGTH_SHORT);
         toast.show();
+    }
+
+    public void btnStartActivityClicked(View view){
+
+        Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+        startActivity(intent);
     }
 }

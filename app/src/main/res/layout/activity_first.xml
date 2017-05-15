@@ -5,4 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/activity_second"
+        android:text="@string/activity_second"
+        android:onClick="btnStartActivityClicked"/>
+
 </LinearLayout>
