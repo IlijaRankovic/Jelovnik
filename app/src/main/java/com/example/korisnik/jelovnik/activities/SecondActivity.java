@@ -1,25 +1,25 @@
-package com.example.korisnik.jelovnik;
+package com.example.korisnik.jelovnik.activities;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
+
+import com.example.korisnik.jelovnik.R;
 
 /**
  * Created by Korisnik on 15.5.2017..
  */
 
-public class FirstActivity extends Activity {
+public class SecondActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_first);
+        setContentView(R.layout.activity_second);
 
-        Toast toast = Toast.makeText(getBaseContext(), "FirstActivity.onCreate", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(getBaseContext(), "SecondActivity.onCreate", Toast.LENGTH_SHORT);
         toast.show();
     }
 
@@ -28,7 +28,7 @@ public class FirstActivity extends Activity {
 
         super.onStart();
 
-        Toast toast = Toast.makeText(getBaseContext(), "FirstActivity.onStart", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(getBaseContext(), "SecondActivity.onStart", Toast.LENGTH_SHORT);
         toast.show();
     }
 
@@ -37,7 +37,7 @@ public class FirstActivity extends Activity {
 
         super.onResume();
 
-        Toast toast = Toast.makeText(getBaseContext(), "FirstActivity.onResume", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(getBaseContext(), "SecondActivity.onResume", Toast.LENGTH_SHORT);
         toast.show();
     }
 
@@ -46,7 +46,7 @@ public class FirstActivity extends Activity {
 
         super.onRestart();
 
-        Toast toast = Toast.makeText(getBaseContext(), "FirstActivity.onRestart", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(getBaseContext(), "SecondActivity.onRestart", Toast.LENGTH_SHORT);
         toast.show();
     }
 
@@ -55,7 +55,7 @@ public class FirstActivity extends Activity {
 
         super.onPause();
 
-        Toast toast = Toast.makeText(getBaseContext(), "FirstActivity.onPause", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(getBaseContext(), "SecondActivity.onPause", Toast.LENGTH_SHORT);
         toast.show();
     }
 
@@ -75,11 +75,5 @@ public class FirstActivity extends Activity {
 
         Toast toast = Toast.makeText(getBaseContext(), "FirstActivity.onDestroy", Toast.LENGTH_SHORT);
         toast.show();
-    }
-
-    public void btnStartActivityClicked(View view){
-
-        Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
-        startActivity(intent);
     }
 }
