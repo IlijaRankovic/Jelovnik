@@ -19,11 +19,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".activities.SecondActivity"
-            android:label="@string/activity_second">
-        </activity>
-
     </application>
 
 </manifest>
