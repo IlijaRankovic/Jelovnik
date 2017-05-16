@@ -11,7 +11,7 @@
     
     <TextView
         android:id="@+id/tv_naziv"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/iv_image"/>
 
@@ -23,7 +23,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@id/tv_naziv"/>
 
-    <TextView
+   <!-- <TextView
         android:id="@+id/tv_kalorijska_vrednost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_opis"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"/>-->
 
     <Spinner
         android:id="@+id/sp_kategorija"
@@ -45,11 +45,19 @@
         android:layout_below="@id/iv_image"
         android:layout_alignParentLeft="true"/>
 
+    <Button
+        android:id="@+id/btn_buy"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sp_kategorija"
+        android:layout_centerHorizontal="true"
+        android:text="@string/button_buy" />
+
     <TextView
         android:id="@+id/tv_sastojak"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/sp_kategorija"
+        android:layout_below="@id/btn_buy"
         android:layout_alignParentLeft="true"/>
 
 </RelativeLayout>
