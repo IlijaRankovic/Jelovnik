@@ -17,7 +17,7 @@ public class KategorijaProvider {
         kategorije.add(new Kategorija(0, "Rostilj"));
         kategorije.add(new Kategorija(1, "Pecenje"));
         kategorije.add(new Kategorija(2, "Kuvano"));
-        kategorije.add(new Kategorija(3, "Riba"));
+        kategorije.add(new Kategorija(3, "Sirovo"));
         return kategorije;
     }
 
@@ -27,7 +27,7 @@ public class KategorijaProvider {
         naziv.add("Rostilj");
         naziv.add("Pecenje");
         naziv.add("Kuvano");
-        naziv.add("Riba");
+        naziv.add("Sirovo");
         return naziv;
     }
 
@@ -40,7 +40,7 @@ public class KategorijaProvider {
             case 2:
                 return new Kategorija(2, "Kuvano");
             case 3:
-                return new Kategorija(3, "Riba");
+                return new Kategorija(3, "Sirovo");
             default:
                 return null;
         }

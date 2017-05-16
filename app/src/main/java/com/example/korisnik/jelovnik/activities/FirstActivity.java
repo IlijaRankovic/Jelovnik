@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.korisnik.jelovnik.R;
+import com.example.korisnik.jelovnik.provider.JeloProvider;
 import com.example.korisnik.jelovnik.provider.KategorijaProvider;
 
 import java.util.List;
@@ -20,7 +21,7 @@ import java.util.List;
 
 public class FirstActivity extends Activity {
 
-    @Override//i
+    @Override
     protected void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
@@ -30,10 +31,10 @@ public class FirstActivity extends Activity {
         Toast toast = Toast.makeText(getBaseContext(), "FirstActivity.onCreate", Toast.LENGTH_SHORT);
         toast.show();
 
-        final List<String> kategorijaNaziv = KategorijaProvider.getKategorijaNaziv();
+        final List<String> jeloNaziv = JeloProvider.getJeloNaziv();
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.list_item, kategorijaNaziv);
-        ListView listView = (ListView) findViewById(R.id.listofKategorija);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.list_item, jeloNaziv);
+        ListView listView = (ListView) findViewById(R.id.listofJelo);
 
         listView.setAdapter(dataAdapter);
 
