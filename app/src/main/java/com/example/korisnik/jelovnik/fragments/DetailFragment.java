@@ -7,9 +7,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.korisnik.jelovnik.R;
 import com.example.korisnik.jelovnik.model.Kategorija;
+import com.example.korisnik.jelovnik.model.Sastojak;
 import com.example.korisnik.jelovnik.provider.JeloProvider;
 import com.example.korisnik.jelovnik.provider.KategorijaProvider;
 import com.example.korisnik.jelovnik.provider.SastojakProvider;
@@ -66,6 +69,12 @@ public class DetailFragment extends Fragment {
         TextView tvOpis = (TextView) getView().findViewById(R.id.tv_opis);
         tvOpis.setText(JeloProvider.getJeloById(position).getOpis());
 
+        TextView tvKalorijskaVrednost = (TextView) getView().findViewById(R.id.tv_kalorijska_vrednost);
+        tvKalorijskaVrednost.setText("Kalorijska vrednost: " + String.valueOf(JeloProvider.getJeloById(position).getKalorijskaVrednost()) + " kacl.");
+
+        TextView tvCena = (TextView) getView().findViewById(R.id.tv_cena);
+        tvCena.setText("Cena: " + String.valueOf(JeloProvider.getJeloById(position).getCena()) + " din.");
+
         Spinner kategorija = (Spinner) getView().findViewById(R.id.sp_kategorija);
         List<String> kategorije = KategorijaProvider.getKategorijaNaziv();
         ArrayAdapter<String> adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, kategorije);
@@ -81,8 +90,14 @@ public class DetailFragment extends Fragment {
             }
         });
 
+        /*List<String> sastojakNaziv = SastojakProvider.getSastojakNaziv();
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item_2, sastojakNaziv);
+        ListView listView = (ListView) getActivity().findViewById(R.id.listofSastojak);
+        listView.setAdapter(dataAdapter);
+
+
         TextView tvSastojak = (TextView) getView().findViewById(R.id.tv_sastojak);
-        tvSastojak.setText(SastojakProvider.getSastojakById(position).getNaziv());
+        tvSastojak.setText(SastojakProvider.getSastojakById(position).getNaziv());*/
 
     }
 
@@ -142,6 +157,12 @@ public class DetailFragment extends Fragment {
         TextView tvOpis = (TextView) getView().findViewById(R.id.tv_opis);
         tvOpis.setText(JeloProvider.getJeloById(position).getOpis());
 
+        TextView tvKalorijskaVrednost = (TextView) getView().findViewById(R.id.tv_kalorijska_vrednost);
+        tvKalorijskaVrednost.setText("Kalorijska vrednost: " + String.valueOf(JeloProvider.getJeloById(position).getKalorijskaVrednost()) + " kacl.");
+
+        TextView tvCena = (TextView) getView().findViewById(R.id.tv_cena);
+        tvCena.setText("Cena: " + String.valueOf(JeloProvider.getJeloById(position).getCena()) + " din.");
+
         Spinner kategorija = (Spinner) getView().findViewById(R.id.sp_kategorija);
         List<String> kategorije = KategorijaProvider.getKategorijaNaziv();
         ArrayAdapter<String> adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, kategorije);
@@ -157,7 +178,13 @@ public class DetailFragment extends Fragment {
             }
         });
 
+        /*List<String> sastojakNaziv = SastojakProvider.getSastojakNaziv();
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item_2, sastojakNaziv);
+        ListView listView = (ListView) getActivity().findViewById(R.id.listofSastojak);
+        listView.setAdapter(dataAdapter);
+
+
         TextView tvSastojak = (TextView) getView().findViewById(R.id.tv_sastojak);
-        tvSastojak.setText(SastojakProvider.getSastojakById(position).getNaziv());
+        tvSastojak.setText(SastojakProvider.getSastojakById(position).getNaziv());*/
     }
 }
